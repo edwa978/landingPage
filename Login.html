@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A corporate Bootstrap theme by Medium Rare">
+    <style>
+        @keyframes hideLoader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.loader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.loader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.loader {
+            animation: hideLoader .5s linear .5s forwads;
+        }
+
+        /* Typing Animatiom */
+        .loading-animation {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: typing 1s linear infinite alternate;
+            position: relative;
+            left: -12px;
+        }
+
+        @keyframes typing {
+            0% {
+                background-color: rgba(100, 100, 100, 1);
+                box-shadow: 12px 0px 0px 0px rgba(100, 100, 100, 2), 24px 0px 0px 0px rgba(100, 100, 100, 0.2);
+            }
+
+            75% {
+                background-color: rgba(100, 100, 100, 0.4);
+                box-shadow: 12px 0px 0px 0px rgba(100, 100, 100, 0.2), 24px 0px 0px 0px rgba(100, 100, 100, 1);
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("laod", function () {
+            document.querySelector('body').classList.add('loaded');
+        });
+    </script>
+    <link href="./assets/css/theme.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preload" as="font" href="./assets/fonts/Inter-UI-upright.var.woff2" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" as="font" href="./assets/fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/theme-course.min.css">
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="loaded">
+    <div class="loader">
+        <div class="loading-animation"></div>
+    </div>
+    <section class="min-vh-100 py-5" style="background-color: #0d2129;">
+        <div class="container">
+            <div class="row justify-content-center mb-md-6">
+                <div class="col-auto">
+                    <a href="Login.html">
+                        <img src="./assets/img/logos/renohash-logo.png" width="250px" alt="Renohash">
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-6">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="text-center mb-4">
+                        <h1 class="mb-1 text-white">Create Account</h1>
+                        <span>No creadit card required</span>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label>EmailAddress:</label>
+                            <input type="email" name="login-email" placeholder="EmailAddress" class="form-control">
+                        </div>
+                        <div class="form-group py-1">
+                            <label>Password:</label>
+                            <input type="password" name="login-password" placeholder="Password" class="form-control">
+                            <small class="text-muted">Must have atlist 8 charecters</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="login-password-confirm" placeholder="Confirm password"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-block btn btn-primary" type="submit">Login</button>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="login-agree">
+                            <label class="custom-control-label text-small text-muted" for="login-agree">
+                                "I agree to the"
+                                <a href="#">Terms & Conditions</a>
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="text-center text-small text-muted">
+                            <span>"Already have an account yet?"
+                                <a href="#">Login</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row justify-content-center py-9">
+            <div class="col col-md-auto text-center">
+                <small class="text-muted">&copy; <a href="https://www.google.com/policies/privacy/">Privacy Policy</a>
+                    &copy;2023 Renohash. A product of Renoworx & Construction PTY (LTD), part of the Stasis Group of
+                    companies.
+                    <a href="https://policies.google.com/terms">Terms of Service.</a>
+                </small>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            var now = new Date;
+            var day = 864e5;
+            var weeksToAdd = 2;
+            var tenWeeksFromNow = new Date(+now + day * 7 * weeksToAdd).toISOString().slice(0, 10).replace(/\-/g, '/');
+            $('[data-countdown-date].add-countdown').attr('data-countdown-date', tenWeeksFromNow);
+        })(jQuery);
+    </script>
+    <script type="text/javascript" src="./assets/js/aos.js"></script>
+    <script type="text/javascript" src="./assets/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="./assets/js/flatpickr.min.js"></script>
+    <script type="text/javascript" src="./assets/js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript" src="./assets/js/ion.rangeSlider.min.js"></script>
+    <script type="text/javascript" src="./assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jarallax-element.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.smartWizard.min.js"></script>
+    <script type="text/javascript" src="./assets/js/plyr.polyfilled.min.js"></script>
+    <script type="text/javascript" src="./assets/js/prism.js"></script>
+    <script type="text/javascript" src="./assets/js/scrollMonitor.js"></script>
+    <script type="text/javascript" src="./assets/js/smooth-scroll.polyfills.min.js"></script>
+    <script type="text/javascript" src="./assets/js/svg-injector.umd.production.js"></script>
+    <script type="text/javascript" src="./assets/js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="./assets/js/typed.min.js"></script>
+    <script type="text/javascript" src="./assets/js/theme.js"></script>
+    <script type="text/javascript">
+
+        jQuery("form:not([action])").on('submit', function () { return false; });
+    </script>
+</body>
+
+</html>
